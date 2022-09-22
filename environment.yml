@@ -1,0 +1,23 @@
+name: vae-project
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+  - defaults
+dependencies:
+  - python
+  - pip
+  # Base
+  - pytorch
+  - torchvision
+  - cudatoolkit=11.6
+  # Packages
+  - jupyter
+  - matplotlib
+  - numpy
+  - scikit-learn
+  - pandas
+  - opencv
+  - pyro-ppl
+  - tensorboard
+  - seaborn
