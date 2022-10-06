@@ -24,7 +24,7 @@ def plot_reconstructed(model, ax0=(-5, 5), ax1=(-5,5), n=12, dims=[0,1], img_siz
             images[ (n-1-i)*img_size[0] : (n-1-i+1)*img_size[0], j*img_size[1] : (j+1)*img_size[1]] = x_hat
     fig = plt.figure(figsize=figsize)
     ax = fig.add_subplot(111)
-    ax.imshow(images, extent=[*ax0, *ax1])
+    ax.imshow(images, extent=[*ax0, *ax1], cmap=plt.get_cmap('gray'))
     ax.set_aspect('auto')
     plt.show()
 
