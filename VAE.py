@@ -1,4 +1,5 @@
 from torch import nn
+from torchvision.models import resnet18
 
 class Encoder(nn.Module):
     def __init__(self):

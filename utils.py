@@ -95,3 +95,16 @@ def plot_latent_space_pca(model, data, n_batches=100, device=DEVICE):
     plt.scatter(z[:, 0], z[:, 1], c = labels, cmap = 'tab20')
     cbar = plt.colorbar(ticks = data.dataset.dataset.labels)
     cbar.ax.set_yticklabels(["{:d}".format(i) for i in data.dataset.dataset.labels]) # add the labels
+
+
+def conv2D_output_size(img_size, padding, kernel_size, stride):
+    # compute output shape of conv2D
+    outshape = (np.floor((img_size[0] + 2 * padding[0] - (kernel_size[0] - 1) - 1) / stride[0] + 1).astype(int),
+                np.floor((img_size[1] + 2 * padding[1] - (kernel_size[1] - 1) - 1) / stride[1] + 1).astype(int))
+    return outshape
+
+def convtrans2D_output_size(img_size, padding, kernel_size, stride):
+    # compute output shape of conv2D
+    outshape = ((img_size[0] - 1) * stride[0] - 2 * padding[0] + kernel_size[0],
+                (img_size[1] - 1) * stride[1] - 2 * padding[1] + kernel_size[1])
+    return outshape
